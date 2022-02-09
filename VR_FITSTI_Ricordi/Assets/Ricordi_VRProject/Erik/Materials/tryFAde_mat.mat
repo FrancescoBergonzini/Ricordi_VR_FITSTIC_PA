@@ -103,7 +103,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Dissolve_Amt: 0
+    - Dissolve_Amt: 1
+    - FadePos: 2.01
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
