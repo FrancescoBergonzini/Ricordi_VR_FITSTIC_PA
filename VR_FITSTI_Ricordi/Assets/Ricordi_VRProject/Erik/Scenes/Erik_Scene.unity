@@ -682,6 +682,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room
       objectReference: {fileID: 0}
+    - target: {fileID: 2126588506924133260, guid: 65e7ed219b4e4bf44bb314b549d579fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883394687763213379, guid: 65e7ed219b4e4bf44bb314b549d579fe,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4165c4f7d0bf547479395a417ca2fec1, type: 2}
+    - target: {fileID: 7718815249039063005, guid: 65e7ed219b4e4bf44bb314b549d579fe,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4165c4f7d0bf547479395a417ca2fec1, type: 2}
+    - target: {fileID: 9117240675793704872, guid: 65e7ed219b4e4bf44bb314b549d579fe,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4165c4f7d0bf547479395a417ca2fec1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e7ed219b4e4bf44bb314b549d579fe, type: 3}
 --- !u!1 &795199618
@@ -1499,6 +1519,54 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5750682604501982357}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1743449545
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743449544}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dbcf1631387174f47995770d151babd5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1743449546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743449544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744b3611da944e54da5e532e02ae2454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDistance: 100
+  Enabled: 1
+  OnPointerClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerDownEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1743449549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,27 +1769,27 @@ PrefabInstance:
     - target: {fileID: 4335861040256614140, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4335861040256614140, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4335861040256614140, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4335861040303315891, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4335861040303315891, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4335861040796381956, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
@@ -1848,6 +1916,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIExample 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4335861040796381965, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5836500976336739289, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_Color.a
@@ -1871,27 +1944,27 @@ PrefabInstance:
     - target: {fileID: 5836500976777522850, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5836500976777522850, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5836500976777522850, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5836500977406792813, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5836500977406792813, guid: 1dc01b1fc35106d4184bf7d82139c5ce,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc01b1fc35106d4184bf7d82139c5ce, type: 3}
@@ -1972,6 +2045,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7598270520296540621, guid: d0131abc9d8a961489e16c4bc53ed039,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4165c4f7d0bf547479395a417ca2fec1, type: 2}
     - target: {fileID: 8322264844574798329, guid: d0131abc9d8a961489e16c4bc53ed039,
         type: 3}
       propertyPath: m_Name
