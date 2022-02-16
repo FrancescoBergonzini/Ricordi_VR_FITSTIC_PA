@@ -7,9 +7,9 @@ public class FadeManager : MonoBehaviour
     [SerializeField] Material prova;
     const string fadePos = "FadePos";
     [SerializeField] float fadeHeight=0;
-    [Range(0.0f,1)]
+    [Range(0.0f,0.017f)]
     [SerializeField] float incrementHeight;
-    [Range(0.0f, 1)]
+    [Range(0.0f, 0.04f)]
     [SerializeField] float timeBetweenUpdates;
   
     void Start()
@@ -37,7 +37,11 @@ public class FadeManager : MonoBehaviour
                     testcont++;
 
                     if (testcont > 500)
+                    {
+                        Debug.Log("fade completed and stopped");
                         break;
+                    }
+                        
                 }
                 
             }
