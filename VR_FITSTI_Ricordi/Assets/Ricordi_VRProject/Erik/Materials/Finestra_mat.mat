@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Legno
-  m_Shader: {fileID: -6465566751694194690, guid: 709e3d83efea314438bca6465454e81e,
+  m_Name: Finestra_mat
+  m_Shader: {fileID: -6465566751694194690, guid: 0747367eccc98e04ca203347c866e38f,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -78,7 +78,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - FadePos: 2.5079954
+    - FadePos: 4.326276
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -106,13 +106,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Albedo: {r: 0.5943396, g: 0.1508866, b: 0, a: 0}
+    - Albedo: {r: 0.3254902, g: 0.227451, b: 0.17254902, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1689042873763924902
+--- !u!114 &362942144679076602
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
