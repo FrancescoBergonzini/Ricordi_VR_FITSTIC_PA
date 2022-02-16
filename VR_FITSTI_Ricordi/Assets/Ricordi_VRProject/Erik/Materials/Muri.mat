@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Legno
+  m_Name: Muri
   m_Shader: {fileID: -6465566751694194690, guid: 709e3d83efea314438bca6465454e81e,
     type: 3}
   m_ShaderKeywords: 
@@ -78,7 +78,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - FadePos: 3.7619817
+    - FadePos: 3.7515318
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -106,7 +106,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Albedo: {r: 0.5943396, g: 0.1508866, b: 0, a: 0}
+    - Albedo: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

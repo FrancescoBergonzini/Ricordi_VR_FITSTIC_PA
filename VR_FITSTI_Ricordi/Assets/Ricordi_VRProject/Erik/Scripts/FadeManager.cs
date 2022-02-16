@@ -11,20 +11,28 @@ public class FadeManager : MonoBehaviour
     [SerializeField] float incrementHeight;
     [Range(0.0f, 0.04f)]
     [SerializeField] float timeBetweenUpdates;
+    [SerializeField] Material[] matArray;
   
     void Start()
     {
         Debug.Log(prova.GetFloat(fadePos));
-        Testfade();
+        foreach(Material mat in matArray)
+        {
+            mat.SetFloat(fadePos, 0);
+        }
+
+        TestFade(matArray[0]);
+        TestFade(matArray[1]);
 
     }
 
-     void Testfade()
+     void TestFade(Material matToFade)
     {
         
         Coroutine fadeCoroutine = null;
         if(fadeCoroutine == null)
         {
+
             IEnumerator _testfade()
             {
                 int testcont = 0;
@@ -32,7 +40,7 @@ public class FadeManager : MonoBehaviour
                 {
                     Debug.Log(fadeHeight);
                     fadeHeight += incrementHeight;
-                    prova.SetFloat(fadePos, fadeHeight);
+                    matToFade.SetFloat(fadePos, fadeHeight);
                     yield return new WaitForSeconds(timeBetweenUpdates);
                     testcont++;
 
