@@ -21,7 +21,7 @@ public class AccendiLuceScript : MonoBehaviour
     {
         if (other.tag == "PallaTutorial")
         {
-            luceMovimento.enabled = true;
+            luceMovimento.gameObject.SetActive(true);
         }
     }
 }
