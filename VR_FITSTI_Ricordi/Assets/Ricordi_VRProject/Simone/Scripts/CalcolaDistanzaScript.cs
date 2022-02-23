@@ -8,6 +8,8 @@ public class CalcolaDistanzaScript : MonoBehaviour
     [SerializeField] List<GameObject> oggettiDaAttivare;
     [SerializeField] float distanza;
 
+    bool playerVicino=false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,9 @@ public class CalcolaDistanzaScript : MonoBehaviour
     void Update()
     {
 
-        if (Vector3.Distance(this.transform.position, oggettoADistanza.position) < distanza)
+        if (Vector3.Distance(this.transform.position, oggettoADistanza.position) < distanza && !playerVicino)
         {
+            playerVicino = true;
             foreach(var obj  in oggettiDaAttivare)
             {
                 obj.SetActive(true);
