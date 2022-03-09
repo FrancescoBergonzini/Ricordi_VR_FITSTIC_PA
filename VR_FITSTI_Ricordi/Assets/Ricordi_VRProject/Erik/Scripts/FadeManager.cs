@@ -12,39 +12,34 @@ public class FadeManager : MonoBehaviour
     [Range(0.0f, 0.04f)]
     [SerializeField] float timeBetweenUpdates;
     [SerializeField] Material[] matArray;
+    float delay;
+    [SerializeField] float timeinSecondAudio;
+
+    //audio MariaV 2.18 = 138 sec.
+    // arraymat.lengh
+    //valore base delay = 138/arraymat.lengh
   
     void Start()
     {
-       
+        delay = timeinSecondAudio / matArray.Length;
+        var delayinitialvalue = delay;
+
         foreach(Material mat in matArray)
         {
             mat.SetFloat(cutoffHeight, -0.5f);
-            if (mat != matArray[0])
-            {
-                TestFade(mat, Random.Range(1, 15f));
-            }
-            else
-            {
-                TestFade(mat, 0.5f);
-            }
-           
+            delay += delayinitialvalue; //aumento il dalay ogni volta che ho un nuovo materiale 
+                TestFade(mat, delay);           
         }
-
-       // TestFade(matArray[0], 1);
-        //TestFade(matArray[1], 6);
-        //TestFade(matArray[1]);
-
     }
 
 
 
     void TestFade(Material matToFade,float delay)
-    {
-       
+    {       
         Coroutine fadeCoroutine = null;
+
         if(fadeCoroutine == null)
         {
-
             IEnumerator _testfade()
             {
                 yield return new WaitForSeconds(delay);
