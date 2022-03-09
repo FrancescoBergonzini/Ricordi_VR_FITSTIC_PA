@@ -5,6 +5,8 @@ using UnityEngine;
 public class AccendiLuceScript : MonoBehaviour
 {
     [SerializeField] Light luceMovimento;
+    [SerializeField] GameObject lampadinaDaSpegnere;
+    [SerializeField] List<GameObject> oggettiDaSpegnere;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,11 @@ public class AccendiLuceScript : MonoBehaviour
         if (other.tag == "PallaTutorial")
         {
             luceMovimento.gameObject.SetActive(true);
+            lampadinaDaSpegnere.GetComponent<AudioSource>().Play();
+            foreach(var obj in oggettiDaSpegnere)
+            {
+                obj.SetActive(false);
+            }
         }
     }
 }
