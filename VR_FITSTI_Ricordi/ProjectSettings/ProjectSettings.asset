@@ -168,6 +168,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.VR_FITSTI_Ricordi
     Standalone: com.DefaultCompany.VRFITSTIRicordi
   buildNumber:
     Standalone: 0
