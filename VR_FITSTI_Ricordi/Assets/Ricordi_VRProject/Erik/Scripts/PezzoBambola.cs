@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 namespace BNG 
 { 
 public class PezzoBambola : MonoBehaviour
@@ -7,6 +8,7 @@ public class PezzoBambola : MonoBehaviour
    Grabbable _grabbableComponent;
 
    BallerinaManager _managerBall;
+   [SerializeField] public UnityEvent OnGrab;
 
    public enum PieceName
    {
@@ -22,26 +24,31 @@ public class PezzoBambola : MonoBehaviour
         private void Awake()
         {
             _managerBall = FindObjectOfType<BallerinaManager>();
+
         }
 
         private void Start()
         {
             _grabbableComponent = GetComponent<Grabbable>(); 
+            
         }
 
         private void Update()
         {
             if (!_grabbableComponent.BeingHeld)
             {
-                _managerBall.EnableMeshRendere(_grabbableComponent.BeingHeld);
+                //_managerBall.EnableMeshRendere(_grabbableComponent.BeingHeld);
             }
             else
             {
                 _managerBall.EnableMeshRendere(!_grabbableComponent.BeingHeld);
+                //if(OnGrab)
             }
 
-           
+          
         }
+
+        
 
 
     }
