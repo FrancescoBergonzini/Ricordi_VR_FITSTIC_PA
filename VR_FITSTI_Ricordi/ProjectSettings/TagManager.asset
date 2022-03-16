@@ -6,7 +6,11 @@ TagManager:
   tags:
   - PallaTutorial
   - HandTrigger
+<<<<<<< Updated upstream
   - Floor
+=======
+  - Bambola
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
