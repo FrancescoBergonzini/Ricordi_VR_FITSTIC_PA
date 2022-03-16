@@ -6,6 +6,8 @@ using DG.Tweening;
 public class TriggerCarillonAnimation : MonoBehaviour
 {
     [SerializeField] Transform coperchioCarillon;
+    [SerializeField] float angle;
+    [SerializeField] float duration;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -17,7 +19,7 @@ public class TriggerCarillonAnimation : MonoBehaviour
 
     void InitCarillon()
     {
-        coperchioCarillon.DOLocalRotate(new Vector3(90, 0, 0), 4f);
+        coperchioCarillon.DOLocalRotate(new Vector3(angle, 0, 0), duration);
         gameObject.SetActive(false);
     }
 }
