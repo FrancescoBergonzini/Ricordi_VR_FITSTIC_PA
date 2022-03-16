@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PallaTutorial
   - HandTrigger
+  - Floor
   layers:
   - Default
   - TransparentFX

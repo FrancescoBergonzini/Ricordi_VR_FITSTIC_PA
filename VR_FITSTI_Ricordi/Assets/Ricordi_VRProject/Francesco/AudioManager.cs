@@ -30,7 +30,7 @@ using System;
 
             public bool loop;
 
-            [HideInInspector]
+           
             public AudioSource source;
         }
 
