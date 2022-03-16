@@ -13,6 +13,7 @@ public class CalcolaDistanzaScript : MonoBehaviour
     [SerializeField] float distanza;
     [SerializeField] TutorialManager tutorialManager;
     [SerializeField] VideoPlayer videoPlayer;
+    [SerializeField] GameObject planeVideo;
 
     private bool pallaRaccolta = false;
 
@@ -70,18 +71,18 @@ public class CalcolaDistanzaScript : MonoBehaviour
 
     public async void PLayVideoRilascia()
     {
-        
-            videoPlayer.clip = videoPresa[1];
-            videoPlayer.Play();
+        if (pallaRaccolta)
+        {
+            return;
+        }
+        videoPlayer.clip = videoPresa[1];
+        videoPlayer.Play();
         await Task.Delay(1500);
-        var nuovaPosizione = new Vector3(secondaPosizione.position.x, secondaPosizione.position.y, secondaPosizione.position.z);
-        videoPlayer.transform.position = nuovaPosizione;
-        videoPlayer.transform.position = secondaPosizione.position;
-            videoPlayer.clip = videoRilascia[0];
-            videoPlayer.Play();
-            pallaRaccolta = true;
-        
-        
+        planeVideo.transform.position = secondaPosizione.position;
+        planeVideo.transform.rotation = secondaPosizione.rotation;
+        videoPlayer.clip = videoRilascia[0];
+        videoPlayer.Play();
+        pallaRaccolta = true;
     }
 
 }

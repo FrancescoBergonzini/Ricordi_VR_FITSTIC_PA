@@ -24,7 +24,9 @@ public class TutorialManager : MonoBehaviour
         if (porta.transform.rotation.z > 0.10f && !luceCheSiSpegne)
         {
             luceCheSiSpegne = true;
-            luceMovimento.DOIntensity(0, 1);
+            luceMovimento.DOIntensity(0, 1).OnComplete(()=> {
+                StartCoroutine(SceneManagerScript.ChangeScene(1));
+            });
             //StartCoroutine(SpegniLuceGradualmente());
         }
         if (InputBridge.Instance.LeftThumbstickAxis != Vector2.zero)
