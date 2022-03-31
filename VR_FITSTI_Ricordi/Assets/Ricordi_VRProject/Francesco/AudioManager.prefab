@@ -43,10 +43,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a087393b5c1b474b9b1e7fab3629291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - type: 1
-    clip: {fileID: 0}
-    volume: 0.7
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: 6f2fb4334027dec4d85f752eb58afe2d, type: 3}
+  - {fileID: 8300000, guid: 3ce147064dbb06842bcebb152f8acf45, type: 3}
+  - {fileID: 8300000, guid: 7fea7007d270e9a4f91b3bf31d2865f7, type: 3}
+  - {fileID: 8300000, guid: 33e30c93f8ec69041b9f7903cb7e0900, type: 3}
+  - {fileID: 8300000, guid: 2449f7b23a7259f49bc85a7b06af9650, type: 3}
+  - {fileID: 8300000, guid: 0638ca554ff5ec642994fa0fd5100979, type: 3}
+  - {fileID: 8300000, guid: 1bf8075ed4f377446b3ee408beef98f0, type: 3}
+  - {fileID: 8300000, guid: e1b613c0e4704854995481c81c7fabc7, type: 3}
+  - {fileID: 8300000, guid: d1f5bec7997f31246a6622c026b4341d, type: 3}
+  - {fileID: 8300000, guid: 55c305b16d7b6194b8d2831009b5ae84, type: 3}
+  sources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
