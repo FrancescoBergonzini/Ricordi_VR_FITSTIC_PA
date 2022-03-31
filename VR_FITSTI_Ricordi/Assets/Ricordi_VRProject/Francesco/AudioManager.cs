@@ -11,7 +11,7 @@ using System;
             None =0,
 
             suonoEsempio,
-            cadutaLibro
+            suonoChitarra,
 
             //qua nomi dei suoni da eseguire
             
