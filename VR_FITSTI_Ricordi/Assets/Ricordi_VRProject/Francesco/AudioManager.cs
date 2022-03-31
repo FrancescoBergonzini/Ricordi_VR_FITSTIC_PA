@@ -40,13 +40,18 @@ using System;
         if (i < 7 && sources[i] != null)
         {
             sources[i].Play();
-            if (i == 4)
+            if (i == 3)
             {
                 yield return new WaitForSeconds(5.7f);
                 Switchnplay005();
             }
+            else if (i == 1)
+            {
+                yield return new WaitForSeconds(3f);
+                Switchnplay003();
+            }
+            else Debug.Log("Audiosource " + i + " doesn't exists!");
         }
-        else Debug.Log("Audiosource " + i + " doesn't exists!");
     }
 
     public void Switchnplay003()
