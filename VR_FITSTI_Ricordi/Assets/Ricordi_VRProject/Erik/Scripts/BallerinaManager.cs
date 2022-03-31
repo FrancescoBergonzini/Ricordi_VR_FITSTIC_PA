@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 
 
@@ -13,7 +14,7 @@ namespace BNG
 
         MeshRenderer _myMeshRender;
         static int statoPezziPresi = 0;
-        [SerializeField] UnityEvent OnPieceDropped;
+        
 
         [SerializeField] GameObject[] oggettiDopoTesta;
         [SerializeField] GameObject[] oggettiDopoBraccio;
@@ -22,6 +23,9 @@ namespace BNG
         private void Start()
         {
             _myMeshRender = GetComponent<MeshRenderer>();
+            HideInteractionObjs(oggettiDopoTesta);
+            HideInteractionObjs(oggettiDopoBraccio);
+            HideInteractionObjs(oggettiDopoGamba);
         }
         private void OnTriggerEnter(Collider other)
         {
@@ -47,8 +51,9 @@ namespace BNG
 
                     //aggiorno la lo stato interno 
                     statoPezziPresi++;
-                    if (OnPieceDropped != null)
-                        OnPieceDropped.Invoke();
+                    CustomActions();
+                    /*if (OnPieceDropped != null)
+                        OnPieceDropped.Invoke();*/
                 }
             }
                 
@@ -57,18 +62,7 @@ namespace BNG
            
         }
 
-       /* private void Update()
-        {
-            if (PezzoBambola.oneOfAsIsGrabbed)
-            {
-                cilindermat.color = Color.yellow;
-                
-            }
-            else
-            {
-                cilindermat.color = Color.blue;
-            }
-        }*/
+   
 
         public  void EnableMeshRendere(bool fallo)
         {
@@ -77,33 +71,54 @@ namespace BNG
 
         public void CustomActions()
         {
+            Debug.LogError($"Pezzi presi: {statoPezziPresi}");
+            CoseCheAccadonoPerPezzo(statoPezziPresi);
+            
+        }
+
+        void CoseCheAccadonoPerPezzo(int pezziPresi)
+        {
+         
+            Debug.Log("Accendo il Braccio"); 
             switch (statoPezziPresi)
             {
                 case 1:
-                    CoseCheAccadonoPerPezzo1();
+                  foreach(GameObject obj in oggettiDopoTesta)
+                  {
+                        obj.SetActive(true);
+                        //add force al libro
+                        //accendo luce
+                        //accendo pezzo
+                  }
                     break;
                 case 2:
-                    CoseCheAccadonoPerPezzo2();
+                    foreach (GameObject obj in oggettiDopoBraccio)
+                    {
+                        obj.SetActive(true);
+                        // partire musica giradischi
+                        //accendo il pezzo della gamba
+                        // quando alzo il pezzo preso, nuova musica
+                    }
+
                     break;
                 case 3:
-                    CoseCheAccadonoPerPezzo3();
+                    foreach (GameObject obj in oggettiDopoGamba)
+                    {
+                        obj.SetActive(true);
+                    }
                     break;
-                 
-            }
-        }
+                case 4:
+                    int currentScene = SceneManager.GetActiveScene().buildIndex;
+                    SceneManagerScript.ChangeScene(currentScene+1);
+                    break;
 
-        void CoseCheAccadonoPerPezzo1()
-        {
-            //add force al libro
-            //accendo luce
-            //accendo pezzo
-            Debug.Log("Accendo il Braccio");
+            }
+
+
         }
         void CoseCheAccadonoPerPezzo2()
         {
-            // partire musica giradischi
-            //accendo il pezzo della gamba
-            // quando alzo il pezzo preso, nuova musica
+            
         }
 
         void CoseCheAccadonoPerPezzo3()
@@ -114,7 +129,16 @@ namespace BNG
             //accendi pezzo gonna
             // dopo che ho posizionato l'oggetto senzo il suono della porta che viene sbloccata ---> deve aprirla per andare nella terza scena
         }
+        private void HideInteractionObjs(GameObject[] array)
+        {
+            foreach (GameObject obj in array)
+            {
+                obj.SetActive(false);
+            }
+        }
     }
+
+ 
 }
 
 
