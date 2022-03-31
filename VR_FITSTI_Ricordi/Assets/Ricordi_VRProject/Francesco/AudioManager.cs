@@ -6,36 +6,9 @@ using System;
 
     public class AudioManager : MonoBehaviour
     {
-        public enum AudioType
-        {
-            None =0,
-
-            suonoEsempio,
-            suonoChitarra,
-
-            //qua nomi dei suoni da eseguire
-            
-        }
-
-        [System.Serializable]
-        public class SoundLibrary
-        {
-            public AudioType type;
-
-            public AudioClip clip;
-            [Range(0, 1)]
-            public float volume;
-            [Range(0.1f, 3f)]
-            public float pitch;
-
-            public bool loop;
-
-           
-            public AudioSource source;
-        }
-
-       
-        public SoundLibrary[] sounds;
+    
+        public AudioClip[] clips;
+        public AudioSource[] sources;
 
         public static AudioManager Instance;
 
@@ -52,40 +25,55 @@ using System;
                 return;
             }
 
-            //
+            
             DontDestroyOnLoad(gameObject);
-
-            foreach (SoundLibrary s in sounds)
-            {
-                s.source = gameObject.AddComponent<AudioSource>();
-                s.source.clip = s.clip;
-                s.source.volume = s.volume;
-                s.source.pitch = s.pitch;
-                s.source.loop = s.loop;
-            }
         }
 
-        public void Play(AudioType type)
+    public void PlayAudioSource(int i, float t)
+    {
+        StartCoroutine(playaudiosource(i, t));
+    }
+
+    IEnumerator playaudiosource(int i, float t)
+    {
+        yield return new WaitForSeconds(t);
+        if (i < 7 && sources[i] != null)
         {
-            SoundLibrary sound = null;
-
-            foreach (SoundLibrary s in sounds)
+            sources[i].Play();
+            if (i == 3)
             {
-                if (s.type == type)
-                {
-                    sound = s;
-                }
+                yield return new WaitForSeconds(5.7f);
+                Switchnplay005();
             }
-
-            if (sound != null)
+            else if (i == 1)
             {
-                sound.source.Play();
-
+                yield return new WaitForSeconds(3f);
+                Switchnplay003();
             }
-            else
-            {
-                Debug.LogWarning("Errore, nessun suono con questo nome");
-                return;
-            }
+            else Debug.Log("Audiosource " + i + " doesn't exists!");
         }
     }
+
+    public void Switchnplay003()
+    {
+        sources[3].clip = clips[3];
+        sources[3].Play();
+    }
+
+    public void Switchnplay005()
+    {
+        if (sources[5].clip == clips[5])
+        {
+            sources[5].clip = clips[6];
+            sources[5].loop = true;
+        }
+        else
+        {
+            //come ci arrivo qui?
+            sources[5].clip = clips[7];
+            sources[5].loop = false;
+        }
+            sources[5].Play();
+    }
+
+}

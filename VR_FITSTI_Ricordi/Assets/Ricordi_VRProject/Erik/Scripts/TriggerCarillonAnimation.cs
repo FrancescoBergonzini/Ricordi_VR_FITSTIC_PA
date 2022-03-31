@@ -21,5 +21,6 @@ public class TriggerCarillonAnimation : MonoBehaviour
     {
         coperchioCarillon.DOLocalRotate(new Vector3(angle, 0, 0), duration);
         gameObject.SetActive(false);
+        AudioManager.Instance.PlayAudioSource(1, .5f);
     }
 }
