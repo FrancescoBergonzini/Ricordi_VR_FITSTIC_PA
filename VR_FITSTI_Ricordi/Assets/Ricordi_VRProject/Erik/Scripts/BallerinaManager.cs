@@ -90,6 +90,8 @@ namespace BNG
                         //accendo luce
                         //accendo pezzo
                   }
+                   AudioManager.Instance.PlayAudioSource(2, 3);
+
                     break;
                 case 2:
                     foreach (GameObject obj in oggettiDopoBraccio)
@@ -99,13 +101,14 @@ namespace BNG
                         //accendo il pezzo della gamba
                         // quando alzo il pezzo preso, nuova musica
                     }
-
+                    AudioManager.Instance.PlayAudioSource(3, 3);
                     break;
                 case 3:
                     foreach (GameObject obj in oggettiDopoGamba)
                     {
                         obj.SetActive(true);
                     }
+                    AudioManager.Instance.PlayAudioSource(4, 3);
                     break;
                 case 4:
                     int currentScene = SceneManager.GetActiveScene().buildIndex;
@@ -129,6 +132,7 @@ namespace BNG
             //accendi pezzo gonna
             // dopo che ho posizionato l'oggetto senzo il suono della porta che viene sbloccata ---> deve aprirla per andare nella terza scena
         }
+
         private void HideInteractionObjs(GameObject[] array)
         {
             foreach (GameObject obj in array)
