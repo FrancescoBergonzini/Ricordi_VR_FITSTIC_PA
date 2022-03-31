@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Ricordi_VRProject/Simone/Scenes/TestTutorialScene.unity
-    guid: 54d82052336d55642b4cec095293fc27
+    path: Assets/Ricordi_VRProject/MASTER/TutorialScene_VR_Ricordi.unity
+    guid: 52aa308282efc164cba88d25255c2251
   - enabled: 1
     path: Assets/Ricordi_VRProject/MASTER/NarrazioneScene_VR_Ricordi.unity
     guid: f85ace8d94b0fa6499c335198d37f9ea
