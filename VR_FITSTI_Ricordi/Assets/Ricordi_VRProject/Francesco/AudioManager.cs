@@ -44,36 +44,40 @@ using System;
             {
                 yield return new WaitForSeconds(5.7f);
                 Switchnplay005();
-            }
-            else if (i == 1)
+            } else if (i == 1)
             {
                 yield return new WaitForSeconds(3f);
-                Switchnplay003();
+                sources[3].clip = clips[3];
             }
-            else Debug.Log("Audiosource " + i + " doesn't exists!");
         }
+        else Debug.Log("Audiosource " + i + " doesn't exists!");
     }
 
-    public void Switchnplay003()
+    public void Switch003()
     {
-        sources[3].clip = clips[3];
-        sources[3].Play();
+        if (sources[3].clip != clips[3])
+        {
+            sources[5].Stop();
+            sources[3].clip = clips[3];
+        }
+        
     }
 
     public void Switchnplay005()
     {
-        if (sources[5].clip == clips[5])
+        if (sources[3].clip == clips[5])
         {
-            sources[5].clip = clips[6];
-            sources[5].loop = true;
+            sources[3].Stop();
+            sources[3].clip = clips[6];
+            sources[3].loop = true;
+            sources[3].Play();
         }
-        else
+        /*else if (sources[3].clip == clips[6])
         {
             //come ci arrivo qui?
-            sources[5].clip = clips[7];
-            sources[5].loop = false;
-        }
-            sources[5].Play();
+            sources[3].clip = clips[7];
+            sources[3].loop = false;
+        }*/
     }
 
 }

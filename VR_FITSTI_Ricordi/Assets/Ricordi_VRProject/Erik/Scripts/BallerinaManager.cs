@@ -90,7 +90,9 @@ namespace BNG
                         //accendo luce
                         //accendo pezzo
                   }
-                   AudioManager.Instance.PlayAudioSource(2, 3);
+                    AudioManager.Instance.Switch003();
+                    AudioManager.Instance.PlayAudioSource(1, 5);
+                    AudioManager.Instance.PlayAudioSource(2, 7);
 
                     break;
                 case 2:
@@ -101,24 +103,32 @@ namespace BNG
                         //accendo il pezzo della gamba
                         // quando alzo il pezzo preso, nuova musica
                     }
-                    AudioManager.Instance.PlayAudioSource(3, 3);
+                    AudioManager.Instance.PlayAudioSource(1, 5);
+                    AudioManager.Instance.PlayAudioSource(3, 7);
                     break;
                 case 3:
                     foreach (GameObject obj in oggettiDopoGamba)
                     {
                         obj.SetActive(true);
                     }
-                    AudioManager.Instance.PlayAudioSource(4, 3);
+                    AudioManager.Instance.PlayAudioSource(1, 5);
+                    AudioManager.Instance.PlayAudioSource(4, 7);
                     break;
                 case 4:
-                    int currentScene = SceneManager.GetActiveScene().buildIndex;
-                    SceneManagerScript.ChangeScene(currentScene+1);
+                    AudioManager.Instance.PlayAudioSource(1, 0);
+                    AudioManager.Instance.PlayAudioSource(5, 1);
+                    Invoke("ChangeScene", 3);
                     break;
 
             }
-
-
         }
+
+        void ChangeScene()
+        {
+            int currentScene = SceneManager.GetActiveScene().buildIndex;
+            SceneManagerScript.ChangeScene(currentScene + 1);
+        }
+
         void CoseCheAccadonoPerPezzo2()
         {
             
